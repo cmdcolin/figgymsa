@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "aws s3 sync --delete dist s3://jbrowse.org/demos/msafam/",
-    "postdeploy": "aws cloudfront create-invalidation --distribution-id E13LGELJOT4GQO --paths \"/demos/msafam/*\""
+    "postdeploy": "aws cloudfront create-invalidation --distribution-id E13LGELJOT4GQO --paths \"/demos/msafam/*\" && git push"
   },
   "dependencies": {
     "@emotion/react": "^11.10.8",
