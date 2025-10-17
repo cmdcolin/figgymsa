@@ -123,7 +123,8 @@ function Header({
               <Link href={`http://www.treefam.org/family/${id}`}>
                 See {id} at TreeFam
               </Link>
-            ) : type === 'pfam' ? (
+            ) : // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+            type === 'pfam' ? (
               <Link
                 href={`https://www.ebi.ac.uk/interpro/entry/pfam/${id.split('.')[0]}`}
               >

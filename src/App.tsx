@@ -7,8 +7,8 @@ import { useQueryState } from 'nuqs'
 
 import GeneTreeId from './EnsemblGeneTree'
 import Header from './Header'
-import TreeFamId from './TreeFamId'
 import Pfam from './Pfam'
+import TreeFamId from './TreeFamId'
 
 const App = observer(function () {
   const [id, setId] = useQueryState('id', { defaultValue: '' })
@@ -23,9 +23,15 @@ const App = observer(function () {
     <div className="m-2 p-2">
       <Header
         type={type}
-        setType={setType}
+        setType={arg => {
+          // eslint-disable-next-line @typescript-eslint/no-floating-promises
+          setType(arg)
+        }}
         id={id}
-        setId={setId}
+        setId={arg => {
+          // eslint-disable-next-line @typescript-eslint/no-floating-promises
+          setId(arg)
+        }}
         val={value}
         setVal={setValue}
       />
